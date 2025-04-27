@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int countSubarrays(vector<int>& nums) {
+        int p1=0,p2=2;
+        int ans = 0;
+        while(p2<nums.size()){
+            int sum = nums[p1]+nums[p2];
+            if(sum==nums[p2-1]/2 && nums[p2-1]%2==0)ans++;
+            p1++;
+            p2++;
+        }
+        return ans;
+    }
+};
